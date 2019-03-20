@@ -24,9 +24,9 @@ spring:
 
   datasource:
     primary:
-      url: jdbc:postgresql://86.1.41.45:5432/postgres
+      url: jdbc:postgresql://119.29.138.228:5432/cn_dzk
       username: postgres
-      password: superman
+      password: postgres
       driver-class-name: org.postgresql.Driver
 
       hikari:
@@ -35,9 +35,9 @@ spring:
             maximum-pool-size: 5
             max-lifetime: 1800000
     secondary:
-      url: jdbc:postgresql://86.1.41.45:5432/postgres
+      url: jdbc:postgresql://119.29.138.228:5432/dzk_test1
       username: postgres
-      password: superman
+      password: postgres
       driver-class-name: org.postgresql.Driver
 
       hikari:
@@ -63,7 +63,7 @@ spring:
       repositories:
         enabled: true
 #默认 9300 是 Java 客户端的端口。9200 是支持 Restful HTTP 的接口 #spring.data.elasticsearch.cluster-nodes 集群节点地址列表，用逗号分隔。如果没有指定，就启动一个客户端节点
-      cluster-nodes: 86.1.41.45:9300
+      cluster-nodes: 119.29.190.60:9300
 #spring.data.elasticsearch.cluster-name Elasticsearch 集群名(默认值: elasticsearch)
       cluster-name: elasticsearch
 #spring.data.elasticsearch.propertie 用来配置客户端的额外属性

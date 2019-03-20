@@ -30,7 +30,7 @@ public class TestController {
      * 打招呼测试
      * @return
      */
-    @RequestMapping(value = "/hello",  method = RequestMethod.GET )
+    @RequestMapping(value = "/hello",  method = {RequestMethod.GET,RequestMethod.POST } )
     @ApiOperation(tags = "打招呼测试接口", value = "进行打招呼户测试", notes = "请求返回测试bean" )
     public TestBean hello(){
         TestBean testBean = new TestBean();

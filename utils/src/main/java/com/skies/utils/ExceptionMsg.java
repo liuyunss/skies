@@ -1,5 +1,7 @@
 package com.skies.utils;
 
+import com.alibaba.fastjson.JSONObject;
+import com.skies.bean.ResultBean;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 全局捕获异常
  */
-@ControllerAdvice(basePackages = "cn.skies.controller")
+@ControllerAdvice(basePackages = "cn.com.cennavi.controller")
 @Slf4j
 public class ExceptionMsg {
 
@@ -20,8 +22,11 @@ public class ExceptionMsg {
      */
     @ExceptionHandler(RuntimeException.class)
     @ResponseBody
-    public Object toString(HttpServletRequest httpServletRequest,Exception e) {
+    public Object toString(HttpServletRequest httpServletRequest, Exception e) {
+        ResultBean resultBean = new ResultBean();
+        resultBean.setStateCode(CommUtils.ERRCODE);
         log.error("url:{}---exception:{}",httpServletRequest.getRequestURL(),e.getMessage(),e);
-        return e.toString();
+        resultBean.setMessage(e.toString());
+        return JSONObject.toJSON(resultBean).toString();
     }
 }
