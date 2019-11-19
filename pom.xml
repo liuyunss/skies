@@ -23,7 +23,7 @@
     <packaging>pom</packaging>
 
     <name>skies</name>
-    <description>skies demo project for Spring Boot</description>
+    <description>skies demo</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
