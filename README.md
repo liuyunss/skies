@@ -1,13 +1,4 @@
-springboot demo项目
-页面
-http://localhost:9081/skies/swagger-ui.html
+# 交通运行监测调度中心车辆展示
 
-
-
-springboot 
-lombok
-swaggers
-logback
-undertow
-
---BeetlSQL
+## 本地swagger地址
+<http://127.0.0.1:8808/tocc/swagger-ui.html>
